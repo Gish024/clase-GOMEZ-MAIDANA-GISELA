@@ -1,27 +1,20 @@
-//Desafio entregable N° 1//
+//Desafio complementario
+
+//Incorporando arrays
 
 
-// Algoritmo con condicional
+const usuarios = [];
 
 let nombreUsuario = prompt("Ingrese nombre de usuario");
-if (nombreUsuario == "") {
- alert("Debe ingresar un nombre de usuario");
-}
-else {
- alert("¡Bienvenido/a " + nombreUsuario+" a la tienda online de Puro Sabor!");
-}
 
-
-
-// Algoritmo utilizando un ciclo
-
-let numeroDeId = 0;
-do{
- numeroDeId = prompt("Registre número de ID");
- alert("Su número de ID a sido registrado correctamente"); 
- }while(parseInt(numeroDeId));
-alert("Ingrese un número de ID válido");
-
+do {     
+    if (nombreUsuario = "") { 
+        alert("Debe ingresar un usuario válido");
+    }     
+    nombreUsuario = prompt("Ingrese nuevo nombre de usuario");  
+} while (usuarios.includes(nombreUsuario.toUpperCase()));
+alert("EL nombre de usuario "+nombreUsuario+" se creó con éxito!");
+alert("¡Bienvenido/a " + nombreUsuario+" a la tienda online de Puro Sabor!");
 
 
 
@@ -148,22 +141,4 @@ alert("Compra realizada con éxito: \n\n"+
     "- Descuento por compra al por mayor: $"+pedido.descuento+ "\n\n" +
     "- Total a abonar: $"+pedido.total 
     );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
