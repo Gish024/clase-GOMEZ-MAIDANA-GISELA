@@ -1,15 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">        
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index">   
-    <title>PURO SABOR - Nuestros Productos</title>
+    <meta  name ="description" content = "En este sitio web encontrarás alimentos saludables, ricos en nutrientes, naturales y congelados. Todo listo para facilitar tu vida diaria">
+    <meta  name ="palabras clave" content = "alimentos saludables, ricos, sanos, congelados">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link  rel ="icon" href ="resources/logo.jpg" ></link>
+    <link  rel ="reconnection" href =" https://fonts.gstatic.com " crossorigin>
+    <link rel ="reconnection" href =" https://fonts.googleapis.com ">
+    <link  href =" https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap " rel ="hoja de estilo ">
+    <title>Tienda online PURO SABOR</title>
 </head>
 <body>
-    <h1> Desafío complementario </h1> 
-    <h2>Incorporando arrays</h2>          
-    <script src="js/miarchivo.js"></script>       
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">PURO SABOR - Tienda de Alimentos Saludables y Naturales Congelados</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="index.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Medallones de Garbanzos</a></li>                  
+                            <li><a class="dropdown-item" href="#">Medallones de Arroz Yamaní y espinaca</a></li>
+                            <li><a class="dropdown-item" href="#">Medallones de Lenteja y Zanahoria</a></li>
+                            <li><a class="dropdown-item" href="#">Tarta de choclo</a></li>
+                            <li><a class="dropdown-item" href="#">Tarta de espinaca</a></li>
+                            <li><a class="dropdown-item" href="#">Albondigas de lentejas</a></li>
+                            <li><a class="dropdown-item" href="#">Prepizza de Zanahoria</a></li>
+                            <li><a class="dropdown-item" href="#">Panqueques de espinaca</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" tabindex="-1" aria-disabled="false">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contacto.html" tabindex="-1" aria-disabled="false">Contacto</a>
+                    </li>                    
+                </ul>
+            </div>
+        </div>
+      </nav>
+    </header> 
+
+    <main class="productos">
+        <h1 class="mb-2 text-center">Productos</h1>
+
+        <div class="row justify-content-between">
+
+            <div class="card">
+                <img src="resources/medallongarbanzo.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Medallones de Garbanzos</h5>
+                  <p class="card-text">Medallones congelados hechos con garbanzos, zapallo y queso parmesano. Paquete por 6 unidades <br>$600 </p>
+                  <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="resources/medallonarroz.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Medallones de Arroz Yamaní y espinaca</h5>
+                  <p class="card-text">Medallones congelados hechos con arroz yamaní, huevo y queso espinaca. Paquete por 6 unidades <br>$600 </p>
+                  <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+              
+            <div class="card">
+                <img src="resources/medallon.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Medallones de Lenteja</h5>
+                  <p class="card-text">Medallones congelados hechos con lentejas, huevo y zanahoria. Paquete por 6 unidades <br>$600 </p>
+                  <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+              
+            <div class="card">
+                <img src="resources/tartaschoclo.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Tarta de choclo</h5>
+                  <p class="card-text">Tarta congelada con masa de harina integral y relleno de choclo crema, queso, cebolla y huevo. Unidad de 26 cm. de diámetro <br>$800 </p>
+                  <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+               
+            <div class="card">
+                <img src="resources/tartaespinaca.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Tarta de espinaca</h5>
+                    <p class="card-text">Tarta congelada con masa de harina integral y relleno de espinaca, queso, cebolla y huevo. Unidad de 26 cm. de diámetro <br>$800 </p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="resources/albondigas.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Albóndigas de Lentejas</h5>
+                    <p class="card-text">Albóndigas congeladas de lentejas y zanahoria con harina integral y huevo. Paquetes por 6 unidades <br>$500 </p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>   
+            
+            <div class="card">
+                <img src="resources/pizzacaserazanahoria.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Prepizza de Zanahoria</h5>
+                    <p class="card-text">Masa de prepizza congeladas pre-cocinada de zanahoria, huevo y harina integral. Unidad de 26 cm. de diámetro  <br>$400 </p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>  
+            
+            <div class="card">
+                <img src="resources/panquequesespinaca.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Panqueques de espinaca </h5>
+                    <p class="card-text">Masa de panqueque congelada precocinada de espinaca, huevo y harina integral. Paquetes por 12 unidades  <br>$300 </p>
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>    
+        </div>
+    </main> 
+
+    <footer class="font-small">
+        <div class="text-center py-3">
+            © 2022 Copyright: Puro Sabor
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script defer src="js/miarchivo.js"></script>
 </body>
 </html>
-

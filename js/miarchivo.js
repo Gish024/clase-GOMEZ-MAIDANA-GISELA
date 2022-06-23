@@ -1,144 +1,212 @@
-//Desafio complementario
+//FILTRADO DE PRODUCTOS Y PROCESO DE COMPRA
+//Clase para construir productos
 
-//Incorporando arrays
-
-
-const usuarios = [];
-
-let nombreUsuario = prompt("Ingrese nombre de usuario");
-
-do {     
-    if (nombreUsuario = "") { 
-        alert("Debe ingresar un usuario válido");
-    }     
-    nombreUsuario = prompt("Ingrese nuevo nombre de usuario");  
-} while (usuarios.includes(nombreUsuario.toUpperCase()));
-alert("EL nombre de usuario "+nombreUsuario+" se creó con éxito!");
-alert("¡Bienvenido/a " + nombreUsuario+" a la tienda online de Puro Sabor!");
-
-
-
-// Simulador interactivo
-class Pedido {
-    constructor(producto,cantidad,precio) {
-        this.producto = producto,
-        this.cantidad = cantidad,
-        this.precio = precio,
-        this.descuento = 0,
-        this.subTotal = 0,
-        this.total = 0
+class Producto {
+    constructor (nombre, precio, stock){
+        this.nombre= nombre;
+        this.precio= Number(precio);
+        this.stock= stock;
     }
-
-    calcularSubTotal () {
-        this.subTotal = this.precio * this.cantidad;
-    }
-
-    calcularDescuento() {
-        if (this.subTotal >= 3000) {
-            this.descuento = 500;
-        } else {
-            this.descuento = 0;
-        }
-    }
-
-    calcularIva() {
-        return this.subTotal * 0.21;
-    }
-
-    calcularTotal() {
-        this.total = (this.subTotal + this.calcularIva()) - this.descuento;
+    actualizarStock(x){
+        this.stock= this.stock - x;
     }
 }
 
-const compra = () => {
-    let producto = 0;
+const arrayProductos = [];
+arrayProductos.push(new Producto ("medallones de garbanzos", 600, 50));
+arrayProductos.push(new Producto ("medallones de arroz yamaní y espinaca", 600, 50));
+arrayProductos.push(new Producto ("medallones de lenteja", 600, 50));
+arrayProductos.push(new Producto ("tarta de choclo", 800, 50));
+arrayProductos.push(new Producto ("tarta de espinaca", 800, 50));
+arrayProductos.push(new Producto ("albóndigas de lenteja", 500, 50));
+arrayProductos.push(new Producto ("prepizza de zanahoria", 400, 50));
+arrayProductos.push(new Producto ("panqueques de espinaca", 300, 0));
+
+//FUNCIONES PARA ORDENAR UNA LISTA
+
+const mostrarListaOrdenada = () => {
+    let array = [];
+    arrayProductos.forEach(producto => array.push(producto.nombre+" $"+producto.precio));
+    alert("Lista de precios:"+"\n"+array.join("\n"))
+}
+
+//FUNCIONES PARA EL PROCESO DE COMPRA
+let total = 0;
+
+const agregarProductoAlCarrito = () => {
+    let otroProducto;
+    let producto = "";
     let cantidad = 0;
     let precio = 0;
 
-    while ( producto == 0 || producto > 14 || !producto) {
-        producto = parseInt(prompt("Ingrese el producto que desea comprar:\n 1: Medallones de arroz yamaní con espinaca ($500)\n 2: Medallones de arroz yamaní con acelga ($500)\n 3: Medallones de arroz yamaní con remolacha ($500)\n 4: Medallones de lentejas y zanahoria ($500)\n 5: Medallones de garbanzo y zapallo ($500)\n 6: Prepizza de zanahoria ($200)\n 7: Prepizza de brócoli ($200)\n 8: Prepizza de coliflor ($200)\n 9: Canelones de espinaca ($600)\n 10: Canelones de choclo ($600)\n 11: Albóndigas de lentejas ($600)\n 12: Albóndigas de garbanzos ($600)\n 13: Tarta de choclo ($250)\n 14: Tarta de espinaca ($250)"))
+//Ciclo para sumar productos al carrito
+
+    do {
+        producto = prompt ("¿Querés comprar medallones de garbanzos, medallones de arroz yamaní y espinaca, medallones de lenteja y zanahoria, tarta de choclo, tarta de espinaca, albóndigas de lenteja, prepizza de zanahoria o panqueques de espinaca?"); 
+        cantidad = parseInt(prompt ("¿Cuántos querés comprar?"));
+        console.log(cantidad)
+
+        switch (producto) {
+            case arrayProductos[0].nombre:
+                arrayProductos[0].actualizarStock(cantidad);
+                if (arrayProductos[0].stock < 0 || isNaN(cantidad)){
+                    alert("Lo sentimos. En este momento no tenemos stock")
+                    arrayProductos[0].stock=arrayProductos[0].stock+cantidad;
+                     precio = 0;
+                    cantidad = 0;
+                }else{
+                    precio= arrayProductos[0].precio;
+                }
+                break;
+            case arrayProductos[1].nombre:
+                arrayProductos[1].actualizarStock(cantidad);
+                if (arrayProductos[1].stock<0 || isNaN(cantidad)){
+                    alert("Lo sentimos. En este momento no tenemos stock")
+                    arrayProductos[1].stock=arrayProductos[1].stock+cantidad;
+                    precio = 0;
+                    cantidad = 0;
+                }else{
+                    precio= arrayProductos[1].precio;
+                }
+                break;
+            case arrayProductos[2].nombre:
+                arrayProductos[2].actualizarStock(cantidad);
+                if (arrayProductos[2].stock<0 || isNaN(cantidad)){
+                    alert("Lo sentimos. En este momento no tenemos stock")
+                    arrayProductos[2].stock=arrayProductos[2].stock+cantidad;
+                    precio = 0;
+                    cantidad = 0;
+                }else{
+                    precio= arrayProductos[2].precio;
+                }
+                break;
+            case arrayProductos[3].nombre:
+                arrayProductos[3].actualizarStock(cantidad);
+                if (arrayProductos[3].stock<0 || isNaN(cantidad)){
+                    alert("Lo sentimos. En este momento no tenemos stock")
+                    arrayProductos[3].stock=arrayProductos[3].stock+cantidad;
+                    precio = 0;
+                    cantidad = 0;
+                }else{
+                    precio= arrayProductos[3].precio;
+                }
+                break;
+            case arrayProductos[4].nombre:
+                arrayProductos[4].actualizarStock(cantidad);
+                if (arrayProductos[4].stock<0 || isNaN(cantidad)){
+                    alert("Lo sentimos. En este momento no tenemos stock")
+                    arrayProductos[4].stock=arrayProductos[4].stock+cantidad;
+                    precio = 0;
+                    cantidad = 0;
+                }else{
+                    precio= arrayProductos[4].precio;
+                }
+                break;
+            case arrayProductos[5].nombre:
+                arrayProductos[5].actualizarStock(cantidad);
+                if (arrayProductos[5].stock<0 || isNaN(cantidad)){
+                    alert("Lo sentimos. En este momento no tenemos stock")
+                    arrayProductos[5].stock=arrayProductos[5].stock+cantidad;
+                    precio = 0;
+                    cantidad = 0;
+                }else{
+                    precio= arrayProductos[5].precio;
+                }
+                break;
+            case arrayProductos[6].nombre:
+                arrayProductos[6].actualizarStock(cantidad);
+                if (arrayProductos[6].stock<0 || isNaN(cantidad)){
+                    alert("Lo sentimos. En este momento no tenemos stock")
+                    arrayProductos[6].stock=arrayProductos[6].stock+cantidad;
+                    precio = 0;
+                    cantidad = 0;
+                }else{
+                    precio= arrayProductos[6].precio;
+                }
+                break;
+            case arrayProductos[7].nombre:
+                arrayProductos[7].actualizarStock(cantidad);
+                if (arrayProductos[7].stock<0 || isNaN(cantidad)){
+                    alert("Lo sentimos. En este momento no tenemos stock")
+                    arrayProductos[7].stock=arrayProductos[7].stock+cantidad;
+                    precio = 0;
+                    cantidad = 0;
+                }else{
+                    precio= arrayProductos[7].precio;
+                }
+                break;
+            default:
+                alert("Alguno de los datos ingresados es incorrecto");
+                precio= 0;
+                cantidad= 0;
+        }
+        total = total + precio*cantidad;
+        otroProducto = confirm("¿Querés agregar otro producto?");
+    } while (otroProducto);
+}
+
+//Función para calcular el descuento
+const obtenerDescuento = (total) => {
+    if (total>=3000){
+        total = total*0.80;
+        alert("Tenés 20% de descuento")
     }
+    return total;
+}
 
-    switch(producto) {
-        case 1:
-            producto = "Medallones de arroz yamaní con espinaca";
-            precio = 500;
-            break;
-        case 2:
-            producto = "Medallones de arroz yamaní con acelga";
-            precio = 500;
-            break;
-        case 3:
-            producto = "Medallones de arroz yamaní con remolacha";
-            precio = 500;
-            break;
-        case 4:
-            producto = "Medallones de lentejas y zanahoria";
-            precio = 500;
-            break;
-        case 5:
-            producto = "Medallones de garbanzo y zapallo";
-            precio = 500;
-            break;
-        case 6:
-            producto = "Prepizza de zanahoria";
-            precio = 200;
-            break;
-        case 7:
-            producto = "Prepizza de brócoli";
-            precio = 200;
-            break;
-        case 8:
-            producto = "Prepizza de coliflor";
-            precio = 200;
-            break;
-        case 9:
-            producto = "Canelones de espinaca";
-            precio = 600;
-            break;
-        case 10:
-            producto = "Canelones de choclo";
-            precio = 600;
-            break;
-        case 11:
-            producto = "Albóndigas de lentejas";
-            precio = 600;
-            break;
-        case 12:
-            producto = "Albóndigas de garbanzos";
-            precio = 600;
-            break;
-        case 13:
-            producto = "Tarta de choclo";
-            precio = 250;
-            break;
-        case 14:
-            producto = "Tarta de espinaca";
-            precio = 250;
-            break;             
+//Función para calcular el envío
+const obtenerPrecioDeEnvio = (total) => {
+    let confirmacion = confirm("¿Querés envio a domicilio?");
+    if (confirmacion && total>=3000){
+        alert("Tenés envío gratis. El total de tu compra es $"+total);
+    }else if (confirmacion && total<3000 && total!=0){
+        total=total+400;
+        alert("El envío cuesta $400. El total de tu compra asciende a $"+total);
+    }else{
+        alert("El total de tu compra es $"+total);
     }
+    return total;
+}
 
-    while ( cantidad == 0 || !cantidad) {
-        cantidad = parseInt(prompt("Producto seleccionado: "+ producto + "\n Indique la cantidad deseada"));
-    }   
-    
-    const compra = new Pedido(producto, cantidad, precio);
-    
-    return compra;
-};
+//Calculo la cantidad de cuotas
+let cuotas = 0;
+const obtenerCantidadDeCuotas = () => {
 
-const pedido = compra();
+    let confirmacion = confirm("¿Querés pagar en cuotas?");
+    if(confirmacion) {
+        cuotas=  parseInt(prompt("¿En cuántas cuotas querés pagar?"));
+        if (cuotas==0){
+            cuotas=1;
+        }else if (isNaN(cuotas)){
+            obtenerCantidadDeCuotas();
+        }
+    }else {
+        cuotas= 1;
+    }
+    return cuotas;
+}
 
-pedido.calcularSubTotal();
-pedido.calcularDescuento();
-pedido.calcularTotal();
+//Calculo los intereses de las cuotas
+const obtenerIntereses = (cuotas) => {
+    if (cuotas==1){
+        return 0;
+    }else{
+        let tasa = 12.3+ cuotas*0.2;
+        return tasa*cuotas;
+    }
+}
 
-console.log(pedido);
+//Calculo el total de carrito
+const obtenerTotal = (total, cuotas, intereses) => {
+    total = (total+intereses)
+    let valorCuota= total/cuotas;
+    alert ("El total a pagar es $"+total+" en "+cuotas+" cuotas de $"+Math.ceil(valorCuota));
+}
 
-alert("Compra realizada con éxito: \n\n"+
-    "- "+pedido.producto+ " x "+pedido.cantidad+ ": $"+pedido.precio * pedido.cantidad +"\n"+
-    "- IVA 21%: $"+pedido.calcularIva()+"\n" +
-    "- Descuento por compra al por mayor: $"+pedido.descuento+ "\n\n" +
-    "- Total a abonar: $"+pedido.total 
-    );
+//LLAMADO A LAS FUNCIONES
+const comprarProductos = () => {
+    agregarProductoAlCarrito();
+    obtenerTotal (obtenerPrecioDeEnvio(obtenerDescuento(total)), obtenerCantidadDeCuotas(), obtenerIntereses(cuotas));
+}
 
+comprarProductos();
