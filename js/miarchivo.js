@@ -39,6 +39,7 @@ const agregarProductoAlCarrito = () => {
     let cantidad = 0;
     let precio = 0;
 
+
 //Ciclo para sumar productos al carrito
 
     do {

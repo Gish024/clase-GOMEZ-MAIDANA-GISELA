@@ -52,22 +52,62 @@
 
     </main class="medios">
         <h2>CONTACTENOS</h2>
-        <div class="flex-container">
-            <form id="form">
-                <div class="form-section">                                  
-                    <input type="text" name="nombre" placeholder="Nombre y Apellido" class="form-input" required>
+        <form id= "formulario" class="needs-validation" novalidate>
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="validationTooltip01">Nombre</label>
+                <input type="text" class="form-control" id="validationTooltip01" placeholder="Escriba su Nombre" required>
+                <div class="valid-tooltip">
+                  ¡Bien hecho!
                 </div>
-                <div class="form-section">  
-                    <input type="email" name="email" placeholder="Email" class="form-input" required>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="validationTooltip02">Apellido</label>
+                <input type="text" class="form-control" id="validationTooltip02" placeholder="Escriba su Apellido" required>
+                <div class="valid-tooltip">
+                  ¡Bien hecho!
                 </div>
-                <div class="form-section">            
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="validationTooltipUsername">Email</label>
+                <div class="input-group">                  
+                  <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Escriba su correo electrónico" aria-describedby="validationTooltipUsernamePrepend" required>
+                  <div class="invalid-tooltip">
+                    Por favor eligue un correo válido
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationTooltip03">Ciudad</label>
+                    <input type="text" class="form-control" id="validationTooltip03" placeholder="Ciudad" required>
+                    <div class="invalid-tooltip">
+                        Por favor seleccione una ciudad válida.
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationTooltip04">Provincia</label>
+                    <input type="text" class="form-control" id="validationTooltip04" placeholder="Provincia" required>
+                    <div class="invalid-tooltip">
+                        Por favor seleccione una provincia válida.
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="validationTooltip05">Número de Telefono</label>
+                    <input type="text" class="form-control" id="validationTooltip05" placeholder="Indique su numero de telefono">
+                    <div class="invalid-tooltip">
+                        Por favor ingrese un numero válido.
+                    </div>
+                </div>
+            </div>        
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
                     <textarea class="form-input" placeholder="Deje su mensaje"></textarea>
                 </div>
-                <div class="form-section">
-                    <input type="submit" value="Enviar" class="form-input"required>
-                </div>
-            </form>
-        </div>                
+            </div>
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </form>                
         <h3>A la brevedad nos estaremos comunicando con Usted. ¡Gracias por visitarnos!</h3>    
     </main>  
     <footer class="font-small">
@@ -76,13 +116,6 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script>
-        let miFormulario = document.getElementById ("form");
-        miFormulario. addEventListener ("submit", validarFormulario );
-        function validarFormulario (e){
-        e.preventDefault ();
-        console.log("Formulario Enviado "); 
-    }
-    </script>
+    <script src="js/events.js"></script>
 </body>
 </html>
