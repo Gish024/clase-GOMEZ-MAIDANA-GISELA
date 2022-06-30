@@ -41,7 +41,7 @@
                            <a class="nav-link active" href="#" tabindex="-1" aria-disabled="false">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link active" href="contacto.html" tabindex="-1" aria-disabled="false">Contacto</a>
+                           <a id="boton" class="nav-link active" href="contacto.html" tabindex="-1" aria-disabled="false">Contacto</a>
                         </li>                        
                     </ul>
                 </div>
@@ -52,7 +52,7 @@
 
     </main class="medios">
         <h2>CONTACTENOS</h2>
-        <form id= "formulario" class="needs-validation" novalidate>
+        <form id= "form" class="needs-validation" novalidate>
             <div class="form-row">
               <div class="col-md-4 mb-3">
                 <label for="validationTooltip01">Nombre</label>
@@ -73,7 +73,7 @@
                 <div class="input-group">                  
                   <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Escriba su correo electrónico" aria-describedby="validationTooltipUsernamePrepend" required>
                   <div class="invalid-tooltip">
-                    Por favor eligue un correo válido
+                    Por favor elige un correo válido
                   </div>
                 </div>
               </div>
@@ -95,20 +95,22 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="validationTooltip05">Número de Telefono</label>
-                    <input type="text" class="form-control" id="validationTooltip05" placeholder="Indique su numero de telefono">
+                    <input type="number" class="form-control" id="validationTooltip05" placeholder="Indique su numero de telefono">
                     <div class="invalid-tooltip">
                         Por favor ingrese un numero válido.
                     </div>
                 </div>
             </div>        
             <div class="form-row">
-                <div class="col-md-4 mb-3">
-                    <textarea class="form-input" placeholder="Deje su mensaje"></textarea>
+                <div class="col-md-3 mb-3">
+                    <textarea class="form-input" id= "validationTooltip06" placeholder="Deje su mensaje"></textarea>
                 </div>
             </div>
-            <button class="btn btn-primary" type="submit">Enviar</button>
-        </form>                
-        <h3>A la brevedad nos estaremos comunicando con Usted. ¡Gracias por visitarnos!</h3>    
+            <button class="btn btn-primary" type="submit">Enviar</button>        
+            <div class="text-success">
+                <h6 class="my-0">A la brevedad nos estaremos comunicando con Usted. ¡Gracias por visitarnos!</h6>
+            </div>     
+        </form>        
     </main>  
     <footer class="font-small">
         <div class="text-center py-3">
