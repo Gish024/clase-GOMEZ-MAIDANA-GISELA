@@ -1,5 +1,56 @@
-//FILTRADO DE PRODUCTOS Y PROCESO DE COMPRA
-//Clase para construir productos
+// getElementByID
+
+let compraGarbanzo = document.getElementById("btn-gar");
+let compraYamani = document.getElementById("btn-yam");
+let compraLenteja = document.getElementById("btn-lent");
+let compraTartaChoclo = document.getElementById("btn-tarchoclo");
+let compraTartaEspin = document.getElementById("btn-tarespin");
+let compraAlbondiga = document.getElementById("btn-albondiga");
+let compraPizza = document.getElementById("btn-pizza");
+let compraPanqueque = document.getElementById("btn-panqueque");
+
+console.log(compraGarbanzo.innerHTML);
+
+
+// getElementByClassName
+
+let listado = document.getElementsByClassName("card-text");
+console.log(listado[0].innerHTML);
+console.log(listado[1].innerHTML);
+console.log(listado[2].innerHTML);
+console.log(listado[3].innerHTML);
+
+
+
+// getElementByTagName
+
+let contenedor = document.getElementsByTagName("h5");
+console.log(contenedor[0].innerHTML);
+console.log(contenedor[1].innerHTML);
+console.log(contenedor[2].innerHTML);
+
+
+// HTML COLLECTION
+
+for (const div of contenedor) {
+ console.log(div.innerHTML);
+}
+
+// INNER TEXT
+
+let saludo = document.getElementById("saludar");
+
+const saludoCliente = prompt("¡Bienvenido a nuestra tienda online! Ingrese por favor su nombre: ");
+
+saludo.innerText = '¡Hola ' +saludoCliente+ ' selecciona los productos que quieres comprar!';
+
+console.log( saludo.innerText ) 
+
+
+
+
+
+// Clase para construir productos
 
 class Producto {
     constructor (nombre, precio, stock){
@@ -209,5 +260,3 @@ const comprarProductos = () => {
     agregarProductoAlCarrito();
     obtenerTotal (obtenerPrecioDeEnvio(obtenerDescuento(total)), obtenerCantidadDeCuotas(), obtenerIntereses(cuotas));
 }
-
-comprarProductos();
