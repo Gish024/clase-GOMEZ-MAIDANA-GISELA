@@ -56,106 +56,10 @@
 
     <main id="producto-contenedor">
         <h1 class="mb-2 text-center">Productos</h1>
-        <h4 id="saludar">Bienvenido</h4>
+        <h4 id="saludar">Bienvenido</h4> 
 
-        <div class="modal-contenedor">            
-
-            <div class="modal-carrito">
-
-                <div id="carrito-contenedor">
-
-                    <div class="row justify-content-between"> 
-                    
-                    <!--Seccion cards-->
-
-                        <div class="card">
-                            <img src="resources/medallongarbanzo.jpg" class="card-img-top" alt="...">
-                            <div class="list-product">
-                                <h5 class="card-title">Medallones de Garbanzos</h5>
-                                <span class="description">Medallones congelados hechos con garbanzos, zapallo y queso parmesano. Paquete por 6 unidades</span>
-                                <p class="card-text">$600</p>
-                                <a href="#" class="btn-compra">Comprar</a>                                      
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <img src="resources/medallonarroz.jpg" class="card-img-top" alt="...">
-                            <div class="list-product">
-                                <h5 class="card-title">Medallones de Arroz Yamaní y espinaca</h5>
-                                <span class="description">Medallones congelados hechos con arroz yamaní, huevo y queso espinaca. Paquete por 6 unidades</span>
-                                <p class="card-text"> $600 </p>
-                                <a href="#" class="btn-compra">Comprar</a>
-                            </div>
-                        </div>
-              
-                        <div class="card">
-                            <img src="resources/medallon.jpg" class="card-img-top" alt="...">
-                            <div class="list-product">
-                                <h5 class="card-title">Medallones de Lenteja</h5>
-                                <span class="description">Medallones congelados hechos con lentejas, huevo y zanahoria. Paquete por 6 unidades</span>
-                                <p class="card-text"> $600 </p>
-                                <a href="#" class="btn-compra">Comprar</a>
-                            </div>
-                        </div>
-              
-                        <div class="card">
-                            <img src="resources/tartaschoclo.jpg" class="card-img-top" alt="...">
-                            <div class="list-product">
-                                <h5 class="card-title">Tarta de choclo</h5>
-                                <span class="description">Tarta congelada con masa de harina integral y relleno de choclo crema, queso, cebolla y huevo. Unidad de 26 cm. de diámetro </span>
-                                <p class="card-text"> $800 </p>
-                                <a href="#" class="btn-compra">Comprar</a>
-                            </div>
-                        </div>
-               
-                        <div class="card">
-                            <img src="resources/tartaespinaca.jpg" class="card-img-top" alt="...">
-                            <div class="list-product">
-                                <h5 class="card-title">Tarta de espinaca</h5>
-                                <span class="description">Tarta congelada con masa de harina integral y relleno de espinaca, queso, cebolla y huevo. Unidad de 26 cm. de diámetro</span>
-                                <p class="card-text"> $800 </p>
-                                <a href="#" class="btn-compra">Comprar</a>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <img src="resources/albondigas.jpg" class="card-img-top" alt="...">
-                            <div class="list-product">
-                                <h5 class="card-title">Albóndigas de Lentejas</h5>
-                                <span class="description">Albóndigas congeladas de lentejas y zanahoria con harina integral y huevo. Paquetes por 6 unidades</span>
-                                <p class="card-text"> $500 </p>
-                                <a href="#" class="btn-compra">Comprar</a>
-                            </div>
-                        </div>   
-            
-                        <div class="card">
-                            <img src="resources/pizzacaserazanahoria.jpg" class="card-img-top" alt="...">
-                            <div class="list-product">
-                                <h5 class="card-title">Prepizza de Zanahoria</h5>
-                                <span class="description">Masa de prepizza congeladas pre-cocinada de zanahoria, huevo y harina integral. Unidad de 26 cm. de diámetro </span>
-                                <p class="card-text"> $400 </p>
-                                <a href="#" class="btn-compra">Comprar</a>
-                            </div>
-                        </div>  
-            
-                        <div class="card">
-                            <img src="resources/panquequesespinaca.jpg" class="card-img-top" alt="...">
-                            <div class="list-product">
-                               <h5 class="card-title">Panqueques de espinaca</h5>
-                               <span class="description">Masa de panqueque congelada precocinada de espinaca, huevo y harina integral. Paquetes por 12 unidades</span>
-                               <p class="card-text"> $300 </p>
-                               <a href="#" class="btn-compra">Comprar</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div> 
-        </div>
-
-        <!--Seccion Float-->
+        <!--Lateral desplegable-->
         <section>
-            <!-- Lateral desplegable -->
             <div class="offcanvas offcanvas-end" id="demo">
 
                 <div class="offcanvas-header">
@@ -175,8 +79,9 @@
                                 <th>Precio:</th>
                             </tr>
                         </thead>
-                        <tbody class="list-items"></tbody>
+                        <tbody id="list-items"></tbody>
                     </table>
+                    <tbody id="list-product"></tbody>                   
                     
 
                     <div class="row">
@@ -216,6 +121,123 @@
             </button>
         </section>
 
+        <!-- Items -->
+        <section class="productos">           
+            <div class="row justify-content-between" id="items">
+
+                <div class="card" style="width: 20rem" id="card-remove"><img src="resources/medallongarbanzo.jpg" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" id="cTitle">Medallones de Garbanzos</h5>
+                        <span class="description">Medallones congelados hechos con garbanzos, zapallo y queso parmesano. Paquete por 6 unidades</span>
+                        <p class="card-text" id="cText">600</p>
+                        <button class="btn btn-primary" id="btn-compra" data-id="1">Comprar</button>                                      
+                    </div>
+                </div>  
+
+                <div class="card" style="width: 20rem" id="card-remove"><img src="resources/medallonarroz.jpg" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" id="cTitle">Medallones de Arroz Yamaní y espinaca</h5>
+                        <span class="description">Medallones congelados hechos con arroz yamaní, huevo y queso espinaca. Paquete por 6 unidades</span>
+                        <p class="card-text" id="cText">600</p>
+                        <button class="btn btn-primary" id="btn-compra" data-id="2">Comprar</button>                                      
+                    </div>
+                </div>    
+
+                <div class="card" style="width: 20rem" id="card-remove"><img src="resources/medallon.jpg" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" id="cTitle">Medallones de Lenteja</h5>
+                        <span class="description">Medallones congelados hechos con lentejas, huevo y zanahoria. Paquete por 6 unidades</span>
+                        <p class="card-text" id="cText">600</p>
+                        <button class="btn btn-primary" id="btn-compra" data-id="3">Comprar</button>                                      
+                    </div>
+                </div>    
+
+                <div class="card" style="width: 20rem" id="card-remove"><img src="resources/tartaschoclo.jpg" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" id="cTitle">Tarta de choclo</h5>
+                        <span class="description">Tarta congelada con masa de harina integral y relleno de choclo crema, queso, cebolla y huevo. Unidad de 26 cm. de diámetro</span>
+                        <p class="card-text" id="cText">800</p>
+                        <button class="btn btn-primary" id="btn-compra" data-id="4">Comprar</button>                                      
+                    </div>
+                </div>    
+
+                <div class="card" style="width: 20rem" id="card-remove"><img src="resources/tartaespinaca.jpg" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" id="cTitle">Tarta de espinaca</h5>
+                        <span class="description">Tarta congelada con masa de harina integral y relleno de espinaca, queso, cebolla y huevo. Unidad de 26 cm. de diámetro</span>
+                        <p class="card-text" id="cText">800</p>
+                        <button class="btn btn-primary" id="btn-compra" data-id="5">Comprar</button>                                      
+                    </div>
+                </div>    
+
+                <div class="card" style="width: 20rem" id="card-remove"><img src="resources/albondigas.jpg" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" id="cTitle">Albondigas de Lentejas</h5>
+                        <span class="description">Albondigas congeladas de lentejas y zanahoria con harina integral y huevo. Paquetes por 6 unidades</span>
+                        <p class="card-text" id="cText">500</p>
+                        <button class="btn btn-primary" id="btn-compra" data-id="6">Comprar</button>                                      
+                    </div>
+                </div>    
+
+                <div class="card" style="width: 20rem" id="card-remove"><img src="resources/pizzacaserazanahoria.jpg" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" id="cTitle">Prepizza de Zanahoria</h5>
+                        <span class="description">Masa de prepizza congeladas pre-cocinada de zanahoria, huevo y harina integral. Unidad de 26 cm. de diámetro</span>
+                        <p class="card-text" id="cText">400</p>
+                        <button class="btn btn-primary" id="btn-compra" data-id="7">Comprar</button>                                      
+                    </div>
+                </div>    
+                    
+                <div class="card" style="width: 20rem" id="card-remove"><img src="resources/panquequesespinaca.jpg" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" id="cTitle">Panqueques de espinaca</h5>
+                        <span class="description">Masa de panqueque congelada precocinada de espinaca, huevo y harina integral. Paquetes por 12 unidades</span>
+                        <p class="card-text" id="cText">300</p>
+                        <button class="btn btn-primary" id="btn-compra" data-id="8">Comprar</button>                                      
+                    </div>
+                </div>    
+            </div>
+        </section>
+
+        <!-- TEMPLATE CARDS -->
+        <template id="template">
+            <div class="card" style="width: 13rem" id="card-remove">
+                <img src="" class="card-img-top" id="card-img" alt="..." />
+                <div class="card-body">
+                    <h5 class="card-title" id="cTitle">asdad</h5>
+                    <p class="card-text" id="cText">asdasd</p>
+                    <button class="btn btn-primary" id="btn-compra">Comprar</button>
+                </div>
+            </div>
+        </template>
+
+        <!-- TEMPLATE CARRITO -->
+        <template id="template-carrito">
+            <tr class="item-productos">
+                <td>Producto</td>
+                <td>Cantidad</td>
+                <td>Precio</td>
+            </tr>
+        </template>
+
+        <!-- TEMPLATE CARRO -->
+        <template id="template-segundo-carrito">
+            <tr class="item-productos">
+                <td>Producto</td>
+                <td>Cantidad</td>
+                <td>Precio</td>
+                <td>
+                    <button class="trash-icon" id="delete-item">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </template>
+         
+        <!-- TEMPLATE COSTOS -->
+        <template id="template-cost">
+            <span class="costos"></span>
+        </template>    
     </main> 
 
     <footer class="font-small">
@@ -225,10 +247,6 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <script defer src="js/compra.js"></script>
-    <script defer src="js/carritoActualizado.js"></script>
-    <script defer src="js/indice.js"></script>
-    <script defer src="js/modo.js"></script>
-    <script defer src="js/stock.js"></script>
+    <script defer src="js/compra.js"></script>    
 </body>
 </html>
