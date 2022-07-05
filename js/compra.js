@@ -67,15 +67,18 @@ primerCompraGet();
 segundaCompraGet() 
 });
 
+// OPERADOR LOGICO OR
+const carrito = JSON.parse(localStorage.getItem('carrito')) || []
 
-// -- localStorage -- 
+
+// LocalStorage -- 
 
 const primerCompraGet = () => {
-if (localStorage.getItem("compra")) {
-  compra = JSON.parse(localStorage.getItem("compra"));
-  pintarCarrito();
-}
-};
+  if (localStorage.getItem("compra")) {
+    compra = JSON.parse(localStorage.getItem("compra"));
+    pintarCarrito();
+  }
+  };
 
 // --- PINTAR CARRITO ---
 
@@ -126,13 +129,12 @@ carritoIva.textContent = "$ " + Math.trunc(iva);
 
 let envio = 0;
 
-const mostrarEnvio = () => {
-  if (total > 3000) {
-    envio = 0;
-  } else {
-    envio = 200;
-  }
-};
+
+//OPERADOR TERNARIO
+
+const mostrarEnvio = () =>  (total > 3000) ? true : false
+mostrarEnvio ? ("envio = 0") : ("envio = 200");
+
 
 const total = subTotal + iva + envio;
 carritoTotal.textContent = "$ " + total;
@@ -235,13 +237,13 @@ const pintarCostosItems = () => {
 
   let envio = 0;
 
-  const mostrarEnvio = () => {
-    if (total > 3000) {
-      envio = 0;
-    } else {
-      envio = 200;
-    }
-  };
+
+  //OPERADOR TERNARIO
+
+const mostrarEnvio = () =>  (total > 3000) ? true : false
+  mostrarEnvio ? ("envio = 0") : ("envio = 200");
+
+  
   const total = subTotal + iva + envio;
   carritoTotal.textContent = "$ " + total;
 
