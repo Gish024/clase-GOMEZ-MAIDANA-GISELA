@@ -5,7 +5,7 @@ let saludo = document.getElementById("saludar");
 
 const saludoCliente = prompt("¡Bienvenido a nuestra tienda online! Ingrese por favor su nombre: ");
 
-saludo.innerText = '¡Hola ' +saludoCliente+ ' selecciona los productos que quieres comprar!';
+saludo.innerText = '¡Hola  ' +saludoCliente+ '!'+ ' Seleccioná los productos que querés comprar:';
 
 console.log( saludo.innerText ) 
 
@@ -68,6 +68,7 @@ segundaCompraGet()
 });
 
 // OPERADOR LOGICO OR
+
 const carrito = JSON.parse(localStorage.getItem('carrito')) || []
 
 
@@ -262,6 +263,39 @@ const segundaCompraGet = () => {
     pintarSegundoCarrito();
   }
 };
+
+// LIBRERIA SWEET ALERT 
+
+const btnBorrar = document.querySelector('#delete-item');
+btnBorrar.addEventListener('click', () => {
+  Swal.fire({
+    title: '¿Está seguro de eliminar el producto?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, seguro',
+    cancelButtonText: 'No, no quiero'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+      title: '¡Eliminado!',
+      icon: 'success',
+      text: 'El producto ha sido eliminado'
+      })
+    }
+  })
+})
+
+const btnAceptar = document.querySelector('#btnAceptar');
+
+btnAceptar.addEventListener('click', () => {
+
+  Swal.fire({
+  title: 'Genial!',
+  text: '¡Su compra ha sido exitosa!',
+  icon: 'success',
+  confirmButtonText: 'Cerrar' 
+  })
+})
 
 
   

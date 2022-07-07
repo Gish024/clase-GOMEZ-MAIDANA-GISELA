@@ -25,11 +25,7 @@ Array.from(forms).forEach(form => {
   }, false)
 });
 
-
-
-
-
-// SWEET ALERT
+// LIBRERIA SWEET ALERT
 
 const envioFormulario = document.getElementById("btnEnviar");
 
