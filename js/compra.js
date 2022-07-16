@@ -1,4 +1,3 @@
-
 // SALUDO
 
 let saludo = document.getElementById("saludar");
@@ -9,7 +8,7 @@ saludo.innerText = '¡Hola  ' +saludoCliente+ '!'+ ' Seleccioná los productos q
 
 console.log( saludo.innerText ) 
 
-// Importamos los productos desde el json
+// Importamos los productos del Json
 
 import { pedirProduct } from "./data.js";
 const jsonProducts = await pedirProduct();
@@ -26,7 +25,7 @@ const setArray = () => {
   return newArr;
 };
 
-// Limpiamos los productos duplicados
+// Limpiamos Productos duplicados
 
 const filtrarDuplicados = (arr) => {
   const productoDuplicado = arr.map((array) => {
@@ -46,6 +45,7 @@ let newArray = array;
 document.addEventListener("DOMContentLoaded", () => {});
 
 // -- LocalStorage -- traemos el carrito del localStorage
+
 let compra = {};
 const compraGet = () => {
   if (localStorage.getItem("compra")) {
@@ -63,14 +63,13 @@ const fragment = document.createDocumentFragment();
 const listProducts = document.querySelector("#list-product");
 
 const pintarCarrito = () => {
-  listProducts.innerHTML = ""; // evitamos que recarge nuevamente los productos
+  listProducts.innerHTML = "";
   Object.values(compra).forEach((producto) => {
     if (producto.price > 0) {
       // evitamos que muestre los productos con precio > 0
       templateCarrito.querySelectorAll("td")[0].textContent = producto.name;
       templateCarrito.querySelectorAll("td")[1].textContent = producto.amount;
-      templateCarrito.querySelectorAll("td")[2].textContent =
-        producto.amount * producto.price;
+      templateCarrito.querySelectorAll("td")[2].textContent = producto.amount * producto.price;
 
       const clone = templateCarrito.cloneNode(true);
       fragment.appendChild(clone);
@@ -81,11 +80,11 @@ const pintarCarrito = () => {
   setCostosItems();
 };
 
-// - template cards -
+// Template Cards 
 const template = document.querySelector("#template").content;
 const cards = document.querySelector("#items");
 
-//--- PINTAR CARDS ---
+// PINTAR CARDS
 
 const showProduct = (array) => {
   array.forEach((el) => {
@@ -101,7 +100,8 @@ const showProduct = (array) => {
   cards.appendChild(fragment);
 };
 
-// -- Eliminar cards 
+// Eliminar cards 
+
 function removeCards() {
   let cards = document.querySelectorAll(".card");
 
@@ -111,11 +111,13 @@ function removeCards() {
 }
 showProduct(newArray);
 
-//--- SELECCION DE PRODUCTOS ---
+
+//SELECCION DE PRODUCTOS
 
 let compraItems = {};
 
-// --- AGREGAR AL CARRITO ---
+// AGREGAR AL CARRITO 
+
 cards.addEventListener("click", (e) => {
   addCarrito(e);
 });
@@ -162,22 +164,17 @@ const setCarrito = (objeto) => {
 
 // --- PINTAR SEGUNDO CARRITO --- (de productos individuales)
 
-const templateCarritoDos = document.querySelector(
-  "#template-segundo-carrito"
-).content;
+const templateCarritoDos = document.querySelector("#template-segundo-carrito").content;
 
 const list = document.querySelector("#list-items");
 
 const pintarSegundoCarrito = () => {
-  list.innerHTML = ""; // evitamos que recarge nuevamente los productos
+  list.innerHTML = "";
   Object.values(compraItems).forEach((producto) => {
     if (producto.price > 0) {
-      // evitamos que muestre los productos con precio > 0
       templateCarritoDos.querySelectorAll("td")[0].textContent = producto.name;
-      templateCarritoDos.querySelectorAll("td")[1].textContent =
-        producto.amount;
-      templateCarritoDos.querySelectorAll("td")[2].textContent =
-        producto.amount * producto.price;
+      templateCarritoDos.querySelectorAll("td")[1].textContent = producto.amount;
+      templateCarritoDos.querySelectorAll("td")[2].textContent = producto.amount * producto.price;
       templateCarritoDos.querySelector(".fa-trash").dataset.id = producto.id;
 
       const clone = templateCarritoDos.cloneNode(true);
@@ -192,7 +189,7 @@ const pintarSegundoCarrito = () => {
   pintarCostos();
 };
 
-// --- Pintamos los costos del segundo carrito --
+// Pintamos los costos del segundo carrito
 
 let costosItems = {
   total: 0,
@@ -201,43 +198,35 @@ let costosItems = {
   envio: 0,
 };
 
-let costosPc = {
-  total: 0,
-  subTotal: 0,
-  iva: 0,
-  envio: 0,
-};
+// Enviamos los costos al local storage
 
-// --- Enviamos los costos al local storage ---
 const setCostosItems = () => {
-  let subTotalPc = Object.values(compraItems).reduce(
-    (acc, { amount, price }) => acc + price * amount,
-    0
-  );
+  let subTotal = Object.values(compraItems).reduce((acc, { amount, price }) => acc + price * amount,0);
 
-  let ivaPc = subTotalPc * 0.21;
+  let iva = subTotal * 0.21;
 
-  let envioPc = 0;
+  let envio = 0;
 
   const mostrarEnvio = () => {
-    if (totalPc > 140000) {
-      envioPc = 0;
+    if (total > 3000) {
+      envio = 0;
     } else {
-      envioPc = 800;
+      envio = 800;
     }
   };
 
-  let totalPc = subTotalPc + ivaPc + envioPc;
+  let total = subTotal + iva + envio;
 
   mostrarEnvio();
-  costosItems.total = totalPc;
-  costosItems.subTotal = subTotalPc;
-  costosItems.iva = ivaPc;
-  costosItems.envio = envioPc;
+  costosItems.total = total;
+  costosItems.subTotal = subTotal;
+  costosItems.iva = iva;
+  costosItems.envio = envio;
   contar();
 };
 
-// -- storage de costos por items --
+// storage de costos por items
+
 const costosItemStorage = () => {
   localStorage.setItem("costosItems", JSON.stringify(costosItems));
   costosItemGet();
@@ -251,16 +240,16 @@ const costosItemGet = () => {
   }
 };
 
-// -- recuperamos los costos de arma tu pc --
-const costosArmarPcStorageGet = () => {
-  if (localStorage.getItem("costos pc")) {
-    costosPc = JSON.parse(localStorage.getItem("costos pc"));
+// recuperamos los costos
+const costoStorageGet = () => {
+  if (localStorage.getItem("costo")) {
+    costo = JSON.parse(localStorage.getItem("costo"));
     pintarCostos();
     contar();
   }
 };
 
-// --- PINTAR COSTOS EN CARRITO ---
+// PINTAR COSTOS EN CARRITO
 
 // - Donde se pintaran nuestros costos
 const carritoSubTotal = document.querySelector(".carrito-subTotal");
@@ -269,17 +258,17 @@ const carritoIva = document.querySelector(".carrito-iva");
 const carritoTotal = document.querySelector(".carrito-total");
 
 const pintarCostos = () => {
-  if (costosPc.subTotal > 0 && costosItems.subTotal <= 0) {
-    carritoSubTotal.textContent = "$ " + costosPc.subTotal;
-    carritoIva.textContent = "$ " + Math.trunc(costosPc.iva);
-    carritoTotal.textContent = "$ " + costosPc.total;
-    carritoEnvio.textContent = "$ " + costosPc.envio;
-  } else if (costosItems.subTotal > 0 && costosPc.subTotal <= 0) {
+  if (costo.subTotal > 0 && costosItems.subTotal <= 0) {
+    carritoSubTotal.textContent = "$ " + costo.subTotal;
+    carritoIva.textContent = "$ " + Math.trunc(costo.iva);
+    carritoTotal.textContent = "$ " + costo.total;
+    carritoEnvio.textContent = "$ " + costo.envio;
+  } else if (costosItems.subTotal > 0 && costo.subTotal <= 0) {
     carritoSubTotal.textContent = "$ " + costosItems.subTotal;
     carritoIva.textContent = "$ " + Math.trunc(costosItems.iva);
     carritoTotal.textContent = "$ " + costosItems.total;
     carritoEnvio.textContent = "$ " + costosItems.envio;
-  } else if (costosPc.subTotal > 0 && costosItems.subTotal > 0) {
+  } else if (costo.subTotal > 0 && costosItems.subTotal > 0) {
     let costosTotal = {
       total: 0,
       subTotal: 0,
@@ -287,27 +276,27 @@ const pintarCostos = () => {
       iva: 0,
     };
 
-    costosTotal.total = costosPc.total + costosItems.total;
-    costosTotal.subTotal = costosPc.subTotal + costosItems.subTotal;
-    costosTotal.iva = costosPc.iva + costosItems.iva;
-    if (costosTotal.total > 140000) {
+    costosTotal.total = costo.total + costosItems.total;
+    costosTotal.subTotal = costo.subTotal + costosItems.subTotal;
+    costosTotal.iva = costo.iva + costosItems.iva;
+    if (costosTotal.total > 3000) {
       costosTotal.envio = 0;
     } else {
-      costosTotal.envio = 800;
+      costosTotal.envio = 200;
     }
     carritoSubTotal.textContent = "$ " + costosTotal.subTotal;
     carritoIva.textContent = "$ " + Math.trunc(costosTotal.iva);
     carritoTotal.textContent = "$ " + costosTotal.total;
     carritoEnvio.textContent = "$ " + costosTotal.envio;
   } else {
-    carritoSubTotal.textContent = "$ " + costosPc.subTotal;
-    carritoIva.textContent = "$ " + Math.trunc(costosPc.iva);
-    carritoTotal.textContent = "$ " + costosPc.total;
-    carritoEnvio.textContent = "$ " + costosPc.envio;
+    carritoSubTotal.textContent = "$ " + costo.subTotal;
+    carritoIva.textContent = "$ " + Math.trunc(costo.iva);
+    carritoTotal.textContent = "$ " + costo.total;
+    carritoEnvio.textContent = "$ " + costo.envio;
   }
 };
 
-// --- LOCALSTORAGE 2DO CARRITO ("PRODUCTOS")---
+// LOCALSTORAGE 2DO CARRITO ("PRODUCTOS")
 const segundaCompraStorage = () => {
   localStorage.setItem("productos", JSON.stringify(compraItems));
 };
@@ -321,13 +310,13 @@ const segundaCompraGet = () => {
 
 // --- Eliminar productos del carrito ---
 
-const deleteAllBtn = document.querySelector("#delete-all");
+const deleteAllBtn = document.querySelector("#delete-item");
 const deleteAll = () => {
   localStorage.clear();
   location.reload();
 };
 
-// --- SWEET ALERT: delete all---
+// SWEET ALERT: delete all
 
 deleteAllBtn.addEventListener("click", () => {
   Swal.fire({
@@ -351,9 +340,7 @@ deleteAllBtn.addEventListener("click", () => {
   });
 });
 
-list.addEventListener("click", (e) => {
-  deleteItem(e);
-});
+list.addEventListener("click", (e) => {deleteItem(e);});
 
 const deleteItem = (e) => {
   e.target;
@@ -372,34 +359,36 @@ const deleteItem = (e) => {
   e.stopPropagation();
 };
 
-// --- BTN: FINALIZAR COMPRA (sweet alert)---
+// FINALIZAR COMPRA CON SWEET ALERT
 
 const finish = document.querySelector("#finish-buy");
 
 finish.addEventListener("click", () => {
   if (
-    !localStorage.getItem("costos pc") &&
+    !localStorage.getItem("costo") &&
     !localStorage.getItem("costosItems")
   ) {
     Swal.fire({
-      text: "No has agregado productos a tu carro de compras",
+      text: "No has agregado productos a tu carrito de compras",
       confirmButtonColor: "#ffb320",
       color: "#fff",
       confirmButtonText: "Continuar",
-      imageUrl: "../img/logo.png",
-      imageAlt: "HYPE LOGO",
+      imageUrl: "./resources/logo.png",
+      imageAlt: "logo Puro Sabor",
       imageWidth: 150,
       imageHeight: 80,
       background: "#1f2225",
     });
   }
   if (
-    localStorage.getItem("costos pc") ||
+    localStorage.getItem("costo") ||
     localStorage.getItem("costosItems")
   ) {
-    window.location.href = "../pages/compra.html";
+    window.location.href = "../index.html";
   }
 });
+
+
 
 // --- pintar contador en carrito ---
 
@@ -417,20 +406,11 @@ export const contar = () => {
   contador.textContent = cuenta;
 };
 
-btnTop.addEventListener("click", topFunction);
-
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
 
 contar();
 segundaCompraGet();
 compraGet();
-
-
-
-
+costoStorageGet();
 
 
 
