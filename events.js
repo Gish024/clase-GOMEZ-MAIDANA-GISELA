@@ -1,10 +1,3 @@
-// CREACION DE ELEMENTOS 
-
-let parrafo = document.createElement("p");
-parrafo.innerHTML = "<h6>¡Gracias por visitarnos!</h6>"; 
-document.body.append(parrafo);
-
-
 // Validaciones:
 
 const form = document.getElementById("form");

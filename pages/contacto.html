@@ -7,8 +7,8 @@
     <meta  name ="description" content = "En este sitio web encontrarás alimentos saludables, ricos en nutrientes, naturales y congelados. Todo listo para facilitar tu vida diaria">
     <meta  name ="palabras clave" content = "alimentos saludables, ricos, sanos, congelados">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilo.css">
-    <link  rel ="icon" href ="resources/logo.jpg" ></link>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link  rel ="icon" href ="../resources/logo.jpg" ></link>
     <link  rel ="reconnection" href =" https://fonts.gstatic.com " crossorigin>
     <link rel ="reconnection" href =" https://fonts.googleapis.com ">
     <link  href =" https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap " rel ="hoja de estilo ">
@@ -18,14 +18,14 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-               <a class="navbar-brand" href="index.html">PURO SABOR - Tienda de Alimentos Saludables y Naturales Congelados</a>
+               <a class="navbar-brand" href="../index.html">PURO SABOR - Tienda de Alimentos Saludables y Naturales Congelados</a>
                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                    <span class="navbar-toggler-icon"></span>
                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" href="index.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
+                            <a class="nav-link dropdown-toggle active" href="../index.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Medallones de Garbanzos</a></li>                  
                                 <li><a class="dropdown-item" href="#">Medallones de Arroz Yamaní y espinaca</a></li>
@@ -38,7 +38,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link active" href="#" tabindex="-1" aria-disabled="false">Nosotros</a>
+                           <a class="nav-link active" href="nosotros.html" tabindex="-1" aria-disabled="false">Nosotros</a>
                         </li>
                         <li class="nav-item">
                            <a id="boton" class="nav-link active" href="contacto.html" tabindex="-1" aria-disabled="false">Contacto</a>
@@ -119,16 +119,29 @@
         </div>        
     </main>  
     <footer class="my-5 pt-5 text-muted text-xl-center text-small">
-      <p class="mb-1">&copy; 2022 Puro Sabor</p>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a href="#">Privacy</a></li>
-        <li class="list-inline-item"><a href="#">Terms</a></li>
-        <li class="list-inline-item"><a href="#">Support</a></li>
-      </ul>
-    </footer>
-
+        <p class="mb-1">&copy; 2022 Puro Sabor</p>
+        <h4>Todos los derechos reservados 2022</h4>
+        <ul class="list-inline">
+           <li class="list-inline-item"><a href="#">Privacidad</a></li>
+           <li class="list-inline-item"><a href="#">Términos</a></li>
+           <li class="list-inline-item"><a href="#">Soporte Técnico</a></li>
+        </ul>
+        <div class="seguime">
+            <h5>Seguime en mis redes sociales</h5>
+        </div>
+        <div class="redes-sociales">
+            <img src="../resources/facebook.png"><a href="https://www.facebook.com/Puro-Sabor-103474215075238" target="_BLANK">Puro Sabor</a>
+            <img src="../resources/instagram.png"><a href="https://www.instagram.com/purosabor_ok?utm_medium=copy_link" target="_BLANK">@Purosabor_ok</a>   
+            <img src="../resources/whatsapp.png"><p>3704-502995</p>
+            <img src="../resources/icoubi.png"><p>Fotheringham 352 - Formosa</p>
+        </div>
+    </footer>   
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Mi JS -->
     <script src="js/events.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>    
+       
 </body>
 </html>

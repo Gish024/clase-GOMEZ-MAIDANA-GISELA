@@ -1,0 +1,59 @@
+[
+    
+    {
+      "precio": 600,
+      "id": 1,
+      "name": "Medallones de Garbanzos",
+      "img": "../resources/medallongarbanzo.jpg", 
+      "cantidad": 1     
+    },
+    {
+      "precio": 600,
+      "id": 2,
+      "name": "Medallones de Arroz Yamaní y espinaca",
+      "img": "/resources/medallonarroz.jpg",
+      "cantidad": 1 
+    },
+    {
+      "precio": 600,
+      "id": 3,
+      "name": "Medallones de Lenteja",
+      "img": "/resources/medallon.jpg",
+      "cantidad": 1       
+    },
+    {
+      "precio": 800,
+      "id": 4,
+      "name": "Tarta de choclo",
+      "img": "/resources/tartaschoclo.jpg",
+      "cantidad": 1 
+    },
+    {
+      "precio": 800,
+      "id": 5,
+      "name": "Tarta de espinaca",
+      "img": "/resources/tartaespinaca.jpg",
+      "cantidad": 1       
+    },
+    {
+      "precio": 500,
+      "id": 6,
+      "name": "Albondigas de Lentejas",
+      "img": "/resources/albondigas.jpg"      
+    },
+    {
+      "precio": 400,
+      "id": 7,
+      "name": "Prepizza de Zanahoria",
+      "img": "/resources/pizzacaserazanahoria.jpg",
+      "cantidad": 1 
+    },
+    {
+      "precio": 300,
+      "id": 8,
+      "name": "Panqueques de espinaca",
+      "img": "/resources/panquequesespinaca.jpg",
+      "cantidad": 1      
+    }
+]
+  
