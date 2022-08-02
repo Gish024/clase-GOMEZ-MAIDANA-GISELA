@@ -56,7 +56,7 @@ const pintarCards = data => {
 // Agregamos al carrito
 
 const addCarrito = e => {    
-    if(e.target.classList.contains('btn-dark')) {
+    if(e.target.classList.contains('btn-primary')) {
         //console.log(e.target.dataset.id)
         //console.log(e.target.parentElement)
         setCarrito(e.target.parentElement)
@@ -84,14 +84,16 @@ const setCarrito = item => {
 
     if (producto.precio > 0) {
        Toastify({
-           text: `Añadiste: ${producto.name} Cantidad: ${producto.precio}`,
-           duration: 2500,
+           text: `Añadiste: ${producto.name} Cantidad: ${producto.cantidad}`,
+           duration: 3000,
            gravity: "bottom",
-           position: "left",
+           position: "right",
            className: "toasty",
            style: {
-                backgroundImage: "url(../img/pattern.png)",
-                color: "#ffffff",
+                color: "rgb(238, 244, 246)",
+                font: "serif",
+                weight: 300,
+                size: "1.5em",
             },
         }).showToast();
     }
@@ -145,33 +147,48 @@ const pintarFooter = () => {
 // Eliminar productos del carrito 
 
 const btnVaciar = document.getElementById('vaciar-carrito')
-    btnVaciar.addEventListener('click', () => {     
 
-    // SWEET ALERT: delete all
-    Swal.fire({
-       title: "¿Esta seguro de vaciar el carrito?",
-       text: "¡No podrás revertir esto!",
-       color: "#fff",
-       imageUrl: "../resources/logo.png",
-       imageWidth: 150,
-       imageHeight: 80,
-       imageAlt: "logo Puro Sabor",
-       showCancelButton: true,
-       confirmButtonColor: "#ffb320",
-       cancelButtonColor: "#ff205f",
-       confirmButtonText: "Si, Vaciar",
-       cancelButtonText: "Cancelar",
-       background: "#1f2225",
-    }).then((result) => {
-       if (result.isConfirmed) {
-        deleteAll();
-       }
-    });
+    btnVaciar.addEventListener('click', () => { 
 
-    carrito = {}
-        pintarCarrito()
-        localStorage.clear();
-        location.reload();
+        // SWEET ALERT: delete all
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success',
+              cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          })
+          
+        swalWithBootstrapButtons.fire({
+            title: '¿Está seguro de vaciar el carrito?',
+            text: "¡No podrás revertir esto!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: '¡Confirmar!',
+            cancelButtonText: '¡Cancelar!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                swalWithBootstrapButtons.fire(
+                '¡Carrito vacío!',
+                'Your file has been deleted.',
+                'success'
+            )
+            carrito = {}
+            pintarCarrito()
+            localStorage.clear();
+            location.reload();
+
+            } else if (            
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              swalWithBootstrapButtons.fire(
+                'Cancelado',
+              )
+            }
+          })  
+       
     })
 };
 
@@ -208,24 +225,26 @@ const btnAccion = e => {
 
 // FINALIZAR COMPRA CON SWEET ALERT
 
-const finish = document.querySelector("#finish-buy");
+const finalizarCompra = document.getElementById('finalizar-compra');
+    //console.log(finalizarCompra);    
 
-/*finish.addEventListener("click", () => {
-    if (!localStorage.getItem("costo") && !localStorage.getItem("costosItems")) {
+    finalizarCompra?.addEventListener('click', () => {
         Swal.fire({
-        text: "No has agregado productos a tu carrito de compras",
-        confirmButtonColor: "#ffb320",
-        color: "#fff",
-        confirmButtonText: "Continuar",
-        imageUrl: "./resources/logo.png",
-        imageAlt: "logo Puro Sabor",
-        imageWidth: 150,
-        imageHeight: 80,
-        background: "#1f2225",
-        });
-    }
-    if (localStorage.getItem("costo") || localStorage.getItem("costosItems")) {
-        window.location.href = "../index.html";
-    }
-});*/
+            position: 'top-end',
+            icon: 'success',         
+            title: '¡Gracias por su compra!',
+            showConfirmButton: false,
+            timer: 3000          
+        })
+        carrito = {}
+        pintarCarrito()
+        localStorage.clear();
+        location.reload();
+      });
+
+
+
+
+    
+    
 

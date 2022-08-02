@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta  name ="description" content = "En este sitio web encontrarás alimentos saludables, ricos en nutrientes, naturales y congelados. Todo listo para facilitar tu vida diaria">
-    <meta  name ="palabras clave" content = "alimentos saludables, ricos, sanos, congelados">
+    <!-- SEO -->
+    <meta name="description" content="En este sitio web encontraras alimentos saludables, ricos en nutrientes, naturales y congelados. Todo listo para facilitar tu vida diaria">
+    <meta name="keywords" content="saludable, alimentos, rico, sano, congelados">
+    <meta name="robots" content="follow">
+    <!-- Bootstrap CSS -->  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon"/>
     <link rel="stylesheet" href="../css/estilo.css">
     <link  rel ="icon" href ="../resources/logo.jpg" ></link>
     <link  rel ="reconnection" href =" https://fonts.gstatic.com " crossorigin>
@@ -18,7 +22,9 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-               <a class="navbar-brand" href="../index.html">PURO SABOR - Tienda de Alimentos Saludables y Naturales Congelados</a>
+                <a href="index.html"><img class="Logo" src="../resources/logo.jpg" alt="alimentos"></a>
+                <a class="navbar-brand" href="index.html">PURO SABOR</a>
+                <p>Tienda de Alimentos Saludables y Naturales Congelados</p>
                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                    <span class="navbar-toggler-icon"></span>
                </button>
@@ -35,11 +41,9 @@
                                 <li><a class="dropdown-item" href="#">Albondigas de lentejas</a></li>
                                 <li><a class="dropdown-item" href="#">Prepizza de Zanahoria</a></li>
                                 <li><a class="dropdown-item" href="#">Panqueques de espinaca</a></li>
+                                <li><a class="dropdown-item" href="#">Canelones de espinaca</a></li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link active" href="nosotros.html" tabindex="-1" aria-disabled="false">Nosotros</a>
-                        </li>
+                        </li>                        
                         <li class="nav-item">
                            <a id="boton" class="nav-link active" href="contacto.html" tabindex="-1" aria-disabled="false">Contacto</a>
                         </li>                        
@@ -52,6 +56,7 @@
     <main class="medios">
 
         <h2>CONTACTENOS</h2>
+        <h5>Si estas interesado en vender nuestros productos escribinos y te enviamos toda la información</h5>
 
         <div class="col-md-7 col-lg-8">
         
@@ -60,16 +65,13 @@
                 <div class="row g-3">
 
                    <div class="col-sm-6">             
-                        <label for="validationTooltip01">Nombre</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="Escriba su Nombre" required>
-                        <div class="invalid-feedback">
-                            Complete el dato nombre           
-                        </div>
+                        <label for="validationDefault01">Nombre</label>
+                        <input type="text" class="form-control" id="validationDefault01" placeholder="Escriba su Nombre" required>
                     </div>
 
                     <div class="col-sm-6">
                         <label for="validationTooltip02">Apellido</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="Escriba su Apellido" required>
+                        <input type="text" class="form-control" id="validationTooltip02" placeholder="Escriba su Apellido" required>
                         <div class="invalid-feedback">
                            Complete el dato apellido
                         </div>
@@ -135,13 +137,19 @@
             <img src="../resources/whatsapp.png"><p>3704-502995</p>
             <img src="../resources/icoubi.png"><p>Fotheringham 352 - Formosa</p>
         </div>
-    </footer>   
+    </footer> 
+      
     <!-- Sweet Alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+
+    <!-- Luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1/build/global/luxon.min.js"></script>
+
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
     <!-- Mi JS -->
-    <script src="js/events.js"></script>
+    <script src="events.js" defer></script>
        
 </body>
 </html>

@@ -1,17 +1,57 @@
 body {
     font-family:"Lora", serif;
+    background-color: rgb(211, 229, 246);
 }
 
 nav {
     background-image: radial-gradient(circle 1259px at 2.8% 48.8%, rgb(255, 243, 110) 0%, rgb(30, 204, 214) 45.6%, rgb(5, 54, 154) 65.9%);
-    border-bottom: 4px solid rgb(68, 67, 67);    
+    border-bottom: 4px solid rgb(68, 67, 67);
+    background-image: radial-gradient(circle 1259px at 2.8% 48.8%, rgb(255, 243, 110) 0%, rgb(30, 204, 214) 45.6%, rgb(5, 54, 154) 65.9%);
+    max-width: 100%;
+    align-items: flex-end;  
+    display: flex;
+    position: relative;
+    height: 160px;
+}   
+
+nav .container-fluid .Logo {
+    height: 6em;
+    width: 6em;    
+    animation-name: rotar_logo;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-duration: 3s;
+    animation-delay: 3s;
+  }
+  @keyframes rotar_logo {
+    0% {
+      transform: rotateX(0deg);
+    }
+    50% {
+      transform: rotateX(50deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
 }
 
 nav .navbar-brand {
-    font-size: 1.5em;
+    font-size: 3em;
     font-weight: 500;
     line-height: 3;
-    text-shadow: 8px 8px 10px rgb(78, 77, 2), 3px 3px 8px rgb(78, 77, 2);
+    text-shadow: 8px 8px 10px rgb(78, 77, 2), 3px 3px 8px rgb(78, 77, 2);     
+    color: black;
+}
+
+nav .container-fluid p {
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 2;
+    text-shadow: 8px 8px 10px rgb(78, 77, 2), 3px 3px 8px rgb(78, 77, 2);     
+    color: rgb(45, 44, 44);
+    margin-top: 1em;
+    margin-left: 1em;
+    font-style: oblique;
 }
 
 .menuNavegacion{
@@ -24,9 +64,37 @@ nav .navbar-brand {
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    border-radius: 20px;
+    overflow: hidden;
     width: 18rem;
-    padding: 2rem;    
+    padding: 1.5rem; 
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.315);
+    margin: 1rem;
+    margin-bottom: 1.5rem;
+
 }
+.card h5 {
+    text-align: center;
+    font-size: 1.5em;
+}
+.card p {
+    text-align: center;
+    font-size: 1.5em;
+    color: rgb(33, 33, 161);
+}
+.card .btn-primary {
+    align-items: center;
+    margin-left: 3.2em;
+}
+
+.card header {
+    width: 100%;
+    display: block;
+}  
 
 .card img {
     width: 15rem;
@@ -34,8 +102,160 @@ nav .navbar-brand {
 }
 
 
-footer{
-    background-color: rgb(104, 183, 243);
+footer {
+    background-image: linear-gradient(109.6deg, rgb(17, 181, 236) 11.2%, rgb(200, 227, 11) 91.1%);
+    align-items: flex-start;
+    color: rgb(59, 59, 58);
+    border-top: 3px solid rgb(49, 46, 46);
+    height: 20em;
 }
 
+footer p {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    text-decoration: wavy;
+    color: black;
+    font-size: 1.5em;
+}
+
+footer h4 {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    text-decoration: wavy;
+    color: black;
+    font-size: 1.2em;
+}
+footer ul li {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 100;
+    text-decoration: none;
+    color: rgb(4, 49, 131);
+    font-size: 1em;
+}
+
+footer .redes-sociales {
+    display: flex;
+    justify-content: space-around;
+}
+footer .seguime h5 {
+    color: black;
+    font-size: 1.2em;
+    justify-content: center;
+}
+
+footer .redes-sociales img {
+    height: 2em;
+    width: 2em;
+}
+
+footer .redes-sociales a {
+    font-size: 1em;
+}
+footer .redes-sociales p {
+    font-size: 1em;
+}
+
+.container h3 {
+    display: flex;
+    color: rgb(10, 68, 193);
+    text-shadow: 8px 8px 10px rgb(37, 37, 36);
+    font-size: 2.5em;
+    font-family: "Lora", serif;
+    position: relative;  
+    justify-content: center;
+    animation-name: rubberBand;
+    animation-duration: 3s;
+    margin-top: 1em;
+}
+.container .table th {
+    font-size: 1.3em;
+}
+.container .table #items {
+    font-size: 1.3em;
+}
+.container h4 {
+    display: flex;
+    color: rgb(10, 68, 193);
+    text-shadow: 8px 8px 10px rgb(37, 37, 36);
+    font-size: 2.5em;
+    font-family: "Lora", serif;
+    position: relative;  
+    justify-content: center;    
+    margin-bottom: 1em;
+    margin-top: 1em;
+
+}
+
+#template-footer .number {
+    font-size: 1.3em;
+}
+#vaciar-carrito {
+    font-size: 1.2em;
+    color:rgb(245, 247, 248);    
+}
+#finalizar-compra {
+    font-size: 1.2em;
+    color:rgb(245, 247, 248);    
+}
+#template-carrito td {
+    font-size: 1.3em;
+}
+#template-carrito td span {
+    font-size: 1.3em;
+}
+
+/* Estilo pagina Contacto*/
+
+.medios h2 {
+    display: flex;
+    color: rgb(10, 68, 193);
+    text-shadow: 8px 8px 10px rgb(37, 37, 36);
+    font-size: 2.5em;
+    font-family: "Lora", serif;
+    position: relative;  
+    justify-content: center;   
+    margin-top: 1em;
+}
+.medios form {
+    display: flex;    
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgb(89, 201, 245);
+    margin: 2em;
+    margin-left: 25em;
+    width: 35em;    
+    border: 14px solid rgb(5, 4, 31);
+    outline: 3px solid rgb(6, 146, 240);
+    padding: 3em;
+    box-shadow: 2px 6px 20px #000;
+}
+
+.medios .form .form-control:focus {
+    background: linear-gradient(to bottom, transparent, rgb(110, 110, 99));
+    outline: none;
+    border-bottom: 3px solid rgb(146, 248, 209);
+  }
+.medios .form #btnEnviar [type=submit] {
+    background-color: rgb(7, 4, 175);
+    border-bottom: none;
+    padding: 10px;
+}
+.medios .form #btnEnviar [type=submit]:hover {
+    background-color: rgb(78, 75, 247);
+    border-bottom: none;
+    padding: 10px;
+}
+.medios h5 {
+    font-size: 1.5em;
+    font-family: "Lora", serif;
+    position: relative;  
+    justify-content: center;
+    margin-left: 10em;
+    padding: 1em;   
+}
 

@@ -54,6 +54,13 @@
       "name": "Panqueques de espinaca",
       "img": "/resources/panquequesespinaca.jpg",
       "cantidad": 1      
+    },
+    {
+      "precio": 500,
+      "id": 9,
+      "name": "Canelones de espinaca",
+      "img": "/resources/canelones.jpg",
+      "cantidad": 1      
     }
 ]
   

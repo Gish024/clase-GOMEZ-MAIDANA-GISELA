@@ -9,6 +9,7 @@
         <meta name="robots" content="follow">
         <!-- Bootstrap CSS -->     
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon"/>
         <link rel="stylesheet" href="css/estilo.css">
         <link  rel ="icon" href ="resources/logo.jpg" >    
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
@@ -23,7 +24,9 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">PURO SABOR - Tienda de Alimentos Saludables y Naturales Congelados</a>
+                <a href="index.html"><img class="Logo" src="resources/logo.jpg" alt="alimentos"></a>
+                <a class="navbar-brand" href="index.html">PURO SABOR</a>
+                <p>Tienda de Alimentos Saludables y Naturales Congelados</p>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,6 +43,7 @@
                                 <li><a class="dropdown-item" href="#">Albondigas de lentejas</a></li>
                                 <li><a class="dropdown-item" href="#">Prepizza de Zanahoria</a></li>
                                 <li><a class="dropdown-item" href="#">Panqueques de espinaca</a></li>
+                                <li><a class="dropdown-item" href="#">Canelones de espinaca</a></li>
                             </ul>
                         </li>
 
@@ -60,7 +64,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Item</th>
+                        <th scope="col">Items</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Acción</th>
                         <th scope="col">Total</th>
@@ -74,8 +78,8 @@
                 </tfoot>
             </table>          
         
-            <h4>Cards</h4>
-
+            <h4>Productos</h4>
+            <hr>
             <div class="row" id="cards"></div>
 
         </div>
@@ -101,17 +105,17 @@
     
         <template id="template-footer">
             <th scope="row" colspan="2">Total productos</th>
-            <td>10</td>
+            <td class="number">10</td>
             <td>
                 <button class="btn btn-danger btn-sm" id="vaciar-carrito">
-                    vaciar todo
+                    Vaciar todo
                 </button>
             </td>
             <td class="font-weight-bold">$ <span>5000</span></td>
             <td>
-                <button class="btn btn-carrito" type="button" id="finish-buy">
-                    Finalizar Compra
-                </button>
+                <button class="btn btn-success" id="finalizar-compra">
+                    Finalizar compra
+                </button>                 
             </td>
         </template>
     
@@ -139,7 +143,7 @@
                     <div class="card-body">
                        <h5>Producto</h5>
                        <p>Precio</p>
-                       <button class="btn btn-dark">Comprar</button>
+                       <button class="btn btn-primary" type="button">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -158,7 +162,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <!-- Mi JS -->
-    <script type="module" src="app.js"></script>    
+    <script src="app.js" defer></script>    
 
 </body>
 </html>
